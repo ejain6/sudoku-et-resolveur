@@ -1,0 +1,112 @@
+procédure ajouterCandidat1( entF/sortF laCase : tCase1, entF val:entier);
+procédure ajouterCandidat2( entF/sortF laCase : tCase1, entF val:entier);
+
+procédure retirerCandidat1( entF/sortF laCase : tCase1, entF val : entier);
+procédure retirerCandidat2( entF/sortF laCase : tCase1, entF val : entier);
+
+fonction estCandidat1( entF laCase : tCase1, entF val : entier) délivre booléen;
+fonction estCandidat2( entF laCase : tCase1, entF val : entier) délivre booléen;
+
+fonction nbCandidats(entF laCase : tCase1) délivre entier;
+
+procedure afficherStats(entF nbCasesDebut : entier, entF nbCasesVidesFinal : entier, entF nbCandidatsInitial : entier, entF nbCandidatsFinal : entier);
+
+
+constante entier TAILLE = N*N;
+
+tabCand1 :tableau[TAILLE] de entier;
+tabCand2 :tableau[TAILLE+1] de booleen;
+
+
+type tCase1 = structure
+début
+    valeur: entier;
+    candidats: tabCand1;
+    nbCandidats: entier;
+fin
+
+type tCase1 = structure
+début
+    valeur: entier;
+    candidats: tabCand2;
+    nbCandidats: entier;
+fin
+
+
+procédure ajouterCandidat1( entF/sortF laCase : tCase1, entF val:entier) c'est
+début
+    si (laCase.nbCandidats >= TAILLE) alors
+        écrireEcran("erreur lors de l'ajout d'un candidat");        
+    sinon
+        laCase.candidats[laCase.nbCandidats] = val;
+        laCase.nbCandidats = laCase.nbCandidats + 1;
+    finsi
+fin
+
+procédure ajouterCandidat2( entF/sortF laCase : tCase1, entF val:entier) c'est
+debut
+    laCase.candidats[val] = vrai;
+fin
+
+
+
+procédure retirerCandidat1( entF/sortF laCase : tCase1, entF val : entier) c'est
+debut
+
+    i: entier;
+    
+    tant que (laCase.candidats[i] != val ET i <= laCase.nbCandidats) faire
+        si (laCase.candidats[i] == val) alors
+            laCase.candidats[i] = -1;
+        finsi
+        i = i + 1;
+    finfaire
+    
+    si (laCase.candidats[i] == -1) alors
+        tant que (i < TAILLE) faire
+            laCase.candidats[i] = laCase.candidats[i+1];
+            i = i + 1;
+        finfaire
+        laCase.nbCandidats = laCase.nbCandidats - 1;
+    finsi
+fin
+
+procédure retirerCandidat1( entF/sortF laCase : tCase1, entF val : entier) c'est
+debut
+    laCase.candidats[val] = faux;
+fin
+
+
+
+fonction estCandidat1( entF laCase : tCase1, entF val : entier) délivre booléen c'est
+debut 
+    i: entier;
+    trouve: booleen;
+    trouve = faux
+
+    tant que (trouve == faux ET i <= laCase.nbCandidats) faire
+        si (laCase.candidats[i] == val) alors
+            trouve = vrai;
+        finsi
+    finfaire
+    
+    retourne trouve;
+fin
+
+fonction estCandidat1( entF laCase : tCase1, entF val : entier) délivre booléen c'est
+debut
+    retourne laCase.candidats[val];
+fin
+
+
+
+fonction nbCandidats(entF laCase : tCase1) délivre entier c'est
+debut
+    retourne laCase.nbCandidats;
+fin
+
+
+procedure afficherStats(entF nbCasesDebut : entier, entF nbCasesVidesFinal : entier, entF nbCandidatsInitial : entier, entF nbCandidatsFinal : entier);
+debut
+//affiche plin de choses
+fin
