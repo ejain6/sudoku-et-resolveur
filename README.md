@@ -17,7 +17,7 @@ A la suite de ce projet, nous avons donc commencé a créer un résolveur de gri
 pour trouver la solution dans tous les cas pour n'importe quelle grille valide (peu importe la taille 
 et le nombre de cases remplies au début), et optimisé pour que ça se fasse toujours le plus rapidement possible.
 
-### Nous avons procédé de la ma
+### Nous avons donc procédé de cette manière :
 
 - Apprentissage des techniques de résolutions de sudoku et implémentation en pseudocode
 - Implémentation des techniques sur le jeu de sukodu précédemment créé
