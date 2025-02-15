@@ -17,6 +17,9 @@ A la suite de ce projet, nous avons donc commencé a créer un résolveur de gri
 pour trouver la solution dans tous les cas pour n'importe quelle grille valide (peu importe la taille 
 et le nombre de cases remplies au début), et optimisé pour que ça se fasse toujours le plus rapidement possible.
 
-- Nous avons donc commencé à étudier les techniques de résolutions de sudoku pour les implémenter
-- Nous avons ensuite implémenté un algorithme de backtracking au cas où la solution n'est pas trouvée avant
-- Nous avons fini par optimiser le plus possible touts le code (chaque boucle, condition...) et l'adapter a des grilles de toutes tailles
+### Nous avons procédé de la ma
+
+- Apprentissage des techniques de résolutions de sudoku et implémentation en pseudocode
+- Implémentation des techniques sur le jeu de sukodu précédemment créé
+- Implémentation d'un algorithme de backtracking (au cas où la solution n'est pas trouvée autrement)
+- Optimisation maximale du code (chaque boucle, condition...) et adaptation a des grilles de toutes tailles
